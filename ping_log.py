@@ -49,6 +49,9 @@ def ping_website(url):
 
 if __name__ == "__main__":
     url = "www.google.com"  # 指定需要 ping 的網址
+    current_time = datetime.now()  # 獲取當前時間
+    message = f"{current_time.strftime('%Y-%m-%d %H:%M:%S')} - Ping {url} start"
+    log_to_file(message)
     while True:
         ping_website(url)
         time.sleep(5)  # 每隔 5 秒重新 ping 一次
